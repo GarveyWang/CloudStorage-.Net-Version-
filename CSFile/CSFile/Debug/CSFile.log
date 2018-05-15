@@ -1,0 +1,6 @@
+﻿  CSFile.cpp
+CSFile.cpp(93): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSFile.cpp(93): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+  AssemblyInfo.obj :托管的代码存在时 /DEBUG:FASTLINK 不受支持；正在重新启动与 /DEBUG:FULL 的链接
+  CSFile.vcxproj -> G:\_NET\CloudStorage\CSFile\Debug\CSFile.dll
+  CSFile.vcxproj -> G:\_NET\CloudStorage\CSFile\Debug\CSFile.pdb (Partial PDB)

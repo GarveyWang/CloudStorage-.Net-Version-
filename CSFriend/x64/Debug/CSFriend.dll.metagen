@@ -1,0 +1,53 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly CSFriend, Version=1.0.*, Culture=固定语言(固定国家/地区): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class CSFriend.UserFriend: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, Int32, System.ValueType): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getFromId(): PrivateScope, Public, HideBySig
+    getToId(): PrivateScope, Public, HideBySig
+    getPermitted(): PrivateScope, Public, HideBySig
+    setFromId(Int32): PrivateScope, Public, HideBySig
+    setToId(Int32): PrivateScope, Public, HideBySig
+    setPermitted(ValueType Byte IsBoxed): PrivateScope, Public, HideBySig
+Class CSFriend.UserFileShare: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, Int32, Int32, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getFromId(): PrivateScope, Public, HideBySig
+    getToId(): PrivateScope, Public, HideBySig
+    getFId(): PrivateScope, Public, HideBySig
+    getRemark(): PrivateScope, Public, HideBySig
+    setFromId(Int32): PrivateScope, Public, HideBySig
+    setToId(Int32): PrivateScope, Public, HideBySig
+    setFId(Int32): PrivateScope, Public, HideBySig
+    setRemark(String): PrivateScope, Public, HideBySig
+Class CSFriend.UserFriendDao: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.Data.Odbc.OdbcConnection): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getUserFriend(Int32, Int32): PrivateScope, Public, HideBySig
+    getUserFriends(Int32): PrivateScope, Public, HideBySig
+    getUnpermittedFriends(Int32): PrivateScope, Public, HideBySig
+    getFriendRequests(Int32): PrivateScope, Public, HideBySig
+    insert(UserFriend): PrivateScope, Public, HideBySig
+    del(Int32, Int32): PrivateScope, Public, HideBySig
+    update(UserFriend): PrivateScope, Public, HideBySig
+Class CSFriend.UserFileShareDao: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.Data.Odbc.OdbcConnection): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getSharedFile(Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    getSharedFiles(Int32, Int32): PrivateScope, Public, HideBySig
+    insert(UserFileShare): PrivateScope, Public, HideBySig
+    del(Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    del(Int32, Int32): PrivateScope, Public, HideBySig
+    del(Int32): PrivateScope, Public, HideBySig
+    update(UserFileShare): PrivateScope, Public, HideBySig

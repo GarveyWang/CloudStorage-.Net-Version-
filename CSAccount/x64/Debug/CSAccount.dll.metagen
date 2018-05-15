@@ -1,0 +1,32 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly CSAccount, Version=1.0.*, Culture=固定语言(固定国家/地区): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class CSAccount.User: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, System.String, System.String, Int32, Int32, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getUId(): PrivateScope, Public, HideBySig
+    getPwd(): PrivateScope, Public, HideBySig
+    getName(): PrivateScope, Public, HideBySig
+    getRootDir(): PrivateScope, Public, HideBySig
+    getRecyclebin(): PrivateScope, Public, HideBySig
+    getType(): PrivateScope, Public, HideBySig
+    setUId(Int32): PrivateScope, Public, HideBySig
+    setPwd(String): PrivateScope, Public, HideBySig
+    setName(String): PrivateScope, Public, HideBySig
+    setRootDir(Int32): PrivateScope, Public, HideBySig
+    setRecyclebin(Int32): PrivateScope, Public, HideBySig
+    setType(String): PrivateScope, Public, HideBySig
+Class CSAccount.UserDao: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.Data.Odbc.OdbcConnection): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getUser(Int32): PrivateScope, Public, HideBySig
+    insert(User): PrivateScope, Public, HideBySig

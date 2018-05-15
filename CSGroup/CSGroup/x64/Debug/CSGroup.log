@@ -1,0 +1,94 @@
+﻿  CSGroup.cpp
+CSGroup.cpp(110): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(110): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(126): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(126): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(145): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(145): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(146): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(146): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(147): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(147): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(154): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(154): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(161): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(161): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(162): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(162): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(163): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(163): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(164): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(164): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(228): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(228): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(229): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(229): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(246): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(246): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(265): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(265): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(284): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(284): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(303): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(303): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(304): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(304): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(305): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(305): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(312): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(312): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(313): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(313): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(320): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(320): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(327): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(327): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(328): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(328): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(329): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(329): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(341): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(341): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(342): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(342): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(343): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(343): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(359): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(359): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(381): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(381): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(382): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(382): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(383): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(383): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(384): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(384): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(391): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(391): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(392): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(392): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(393): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(393): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(400): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(400): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(401): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(401): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(408): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(408): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(415): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(415): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(422): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(422): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(423): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(423): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(430): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(430): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(431): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(431): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(432): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(432): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+CSGroup.cpp(433): warning C4947: “System::Data::Odbc::OdbcParameterCollection::Add”: 标记为已过时
+  CSGroup.cpp(433): note: 消息: “Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202”
+  AssemblyInfo.obj :托管的代码存在时 /DEBUG:FASTLINK 不受支持；正在重新启动与 /DEBUG:FULL 的链接
+  CSGroup.vcxproj -> G:\_NET\CloudStorage\CSGroup\x64\Debug\CSGroup.dll
+  CSGroup.vcxproj -> G:\_NET\CloudStorage\CSGroup\x64\Debug\CSGroup.pdb (Partial PDB)

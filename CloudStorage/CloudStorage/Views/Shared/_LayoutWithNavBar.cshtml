@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/fileinput.min.css" rel="stylesheet" />
+    <link href="~/Content/fileinput-rtl.min.css" rel="stylesheet" />
+    <link href="~/Content/semantic.min.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar  navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Campus Cloud Storage</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Session["uname"] <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Account/Login"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> quit </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    @RenderBody()
+
+</body>
+</html>

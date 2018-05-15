@@ -1,0 +1,256 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_LayoutWithNavBar.cshtml";
+}
+
+<h2>List</h2>
+
+<div class="container-fluid ">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <form role="form" id="form1" method="post" action="/Home/List?dId=@ViewBag.rootDir">
+                    <li>
+                        <a href="#" onclick="$('#form1').submit();">
+                            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                            首页
+                        </a>
+                    </li>
+                </form>
+                <form role="form" id="form2" method="post" action="/Friend/List/@ViewBag.uId">
+                    <li class="active">
+                        <a id="active-a" href="#" onclick="$('#form2').submit();">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            好友 <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                </form>
+                <form role="form" id="form3" method="post" action="/Group/List?dId=@ViewBag.uId">
+                    <li>
+                        <a href="#" onclick="$('#form3').submit();">
+                            <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span>
+                            群组
+                        </a>
+                    </li>
+                </form>
+                <form role="form" id="form4" method="post" action="/Home/Recyclebin?dId=@ViewBag.recyclebin">
+                    <li>
+                        <a href="#" onclick="$('#form4').submit();">
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                            回收站
+                        </a>
+                    </li>
+                </form>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <div class="container">
+                <div>@ViewBag.msg</div>
+                <div class="tab-bar">
+                    <ul id="myTab" class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#first" data-toggle="tab">查找用户</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade in active" id="first">
+                        <form id="search_user_form" role="form" method="post" action="/Friend/Search">
+                            <div class="form-group form-inline">
+                                <label>
+                                    用户ID
+                                    <input type="text" class="form-control" id="friend_id_input" placeholder="请输入用户ID">
+                                </label>
+                                <button type="button" id="search_user_btn" class="btn btn-default btn-primary">查询</button>
+                            </div>
+                        </form>
+                        <div id="search_result">
+                        </div>
+                    </div>
+                </div>
+
+                @if (ViewBag.unpermittedFriendList.Count > 0)
+                {
+                    <table class="table  table-hover table-condensed">
+                        <caption>好友请求</caption>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>名称</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (User friend in ViewBag.unpermittedFriendList)
+                            {
+                                <tr>
+                                    <td>@friend.getUId()</td>
+                                    <td>@friend.getName()</td>
+                                    <td>
+                                        <a class="agree_btn" friend_id="@friend.getUId()">同意</a>
+                                        <a class="delete_friend_btn" friend_id="@friend.getUId()">拒绝</a>
+
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+
+                <table class="table  table-hover table-condensed">
+                    <caption>好友列表</caption>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>姓名</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (User friend in ViewBag.friendList)
+                        {
+                            <tr>
+                                <td>@friend.getUId()</td>
+                                <td>@friend.getName()</td>
+                                <td>
+                                    <a class="share_btn" friend_id="@friend.getUId()">查看共享文件</a>
+                                    <a class="delete_friend_btn" friend_id="@friend.getUId()">删除好友</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/scripts/jquery-3.2.1.min.js"></script>
+<script src="~/scripts/bootstrap.min.js"></script>
+<script src="~/scripts/fileinput.min.js"></script>
+<script src="~/scripts/zh.js"></script>
+<script src="~/scripts/semantic.min.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        $('.agree_btn').click(function () {
+            var u_id=@ViewBag.uId;
+            var friend_id=$(this).attr('friend_id');
+            var action='/Friend/Agree' ;
+            var form = $('<form></form>');
+
+            form.attr('action', action);
+            form.attr('method', 'post');
+            form.attr('target', '_self');
+
+            var u_id_input = $('<input type="text" name="uId" />');
+            u_id_input.attr('value',u_id);
+            var friend_id_input = $('<input type="text" name="friendId" />');
+            friend_id_input.attr('value',friend_id);
+
+            form.append(u_id_input);
+            form.append(friend_id_input);
+
+            form.appendTo("body").submit();
+            form.remove();
+            return false;
+        })
+
+        $('.delete_friend_btn').click(function () {
+            var u_id=@ViewBag.uId;
+            var friend_id=$(this).attr('friend_id');
+            var action='/Friend/DeleteFriend' ;
+            var form = $('<form></form>');
+
+            form.attr('action', action);
+            form.attr('method', 'post');
+            form.attr('target', '_self');
+
+            var u_id_input = $('<input type="text" name="uId" />');
+            u_id_input.attr('value',u_id);
+            var friend_id_input = $('<input type="text" name="friendId" />');
+            friend_id_input.attr('value',friend_id);
+
+            form.append(u_id_input);
+            form.append(friend_id_input);
+
+            form.appendTo("body").submit();
+            form.remove();
+            return false;
+        })
+
+        //查询好友
+        $('#search_user_form_open_btn').click(function () {
+            $('#search_user_form').show();
+            $(this).hide();
+        })
+
+        $('#search_user_form_close_btn').click(function () {
+            $('#search_user_form_open_btn').show();
+            $('#msg').hide();
+        })
+
+        $('#search_user_btn').click(function () {
+            var friend_id = $("#friend_id_input").val();
+            if(isNaN(friend_id)){
+                alert("用户ID非法");
+                return false;
+            }
+
+            var htmlobj=$.ajax({
+                url:"/Friend/Search",
+                data:{
+                    uId:@ViewBag.uId,
+                    friendId:friend_id
+                },
+                async:false,
+                dataType: "text",
+                contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+                type:"POST"
+            });
+            $("#search_result").html(htmlobj.responseText);
+        })
+
+        //添加好友 （ajax返回的button）
+        $(document).delegate('#friend_request_btn','click',function(){
+            var friend_id=$(this).attr('friend_id');
+            var action='/Friend/SendRequest' ;
+            var form = $('<form></form>');
+
+            var friend_id_input = $('<input type="text" name="friendId" />');
+            friend_id_input.attr('value',friend_id);
+            form.append(friend_id_input);
+
+            form.attr('action', action);
+            form.attr('method', 'post');
+            form.attr('target', '_self');
+
+            form.appendTo("body").submit();
+            form.remove();
+            
+            return false;
+        })
+
+        $('.share_btn').click(function () {
+            var u_id=@ViewBag.uId;
+            var friend_id=$(this).attr('friend_id');
+            var action='/Friend/ShareFiles' ;
+            var form = $('<form></form>');
+
+            form.attr('action', action);
+            form.attr('method', 'post');
+            form.attr('target', '_self');
+
+            var friend_id_input = $('<input type="text" name="friendId" />');
+            friend_id_input.attr('value',friend_id);
+            form.append(friend_id_input);
+
+            form.appendTo("body").submit();
+            form.remove();
+            return false;
+        })
+    })
+
+</script>

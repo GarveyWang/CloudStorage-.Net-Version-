@@ -1,0 +1,76 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly CSGroup, Version=1.0.*, Culture=固定语言(固定国家/地区): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class CSGroup.UserGroup: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, System.String, System.String, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getGId(): PrivateScope, Public, HideBySig
+    getName(): PrivateScope, Public, HideBySig
+    getType(): PrivateScope, Public, HideBySig
+    getBuilderId(): PrivateScope, Public, HideBySig
+    setGId(Int32): PrivateScope, Public, HideBySig
+    setName(String): PrivateScope, Public, HideBySig
+    setType(String): PrivateScope, Public, HideBySig
+    setBuilderId(Int32): PrivateScope, Public, HideBySig
+Class CSGroup.GroupMember: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, Int32, System.ValueType): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getGId(): PrivateScope, Public, HideBySig
+    getUId(): PrivateScope, Public, HideBySig
+    getPermitted(): PrivateScope, Public, HideBySig
+    setGId(Int32): PrivateScope, Public, HideBySig
+    setUId(Int32): PrivateScope, Public, HideBySig
+    setPermitted(ValueType Byte IsBoxed): PrivateScope, Public, HideBySig
+Class CSGroup.GroupFileShare: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, Int32, Int32, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getGId(): PrivateScope, Public, HideBySig
+    getProviderId(): PrivateScope, Public, HideBySig
+    getFId(): PrivateScope, Public, HideBySig
+    getRemark(): PrivateScope, Public, HideBySig
+    setGId(Int32): PrivateScope, Public, HideBySig
+    setProviderId(Int32): PrivateScope, Public, HideBySig
+    setFId(Int32): PrivateScope, Public, HideBySig
+    setRemark(String): PrivateScope, Public, HideBySig
+Class CSGroup.UserGroupDao: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.Data.Odbc.OdbcConnection): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getUserGroup(Int32): PrivateScope, Public, HideBySig
+    getUserGroups(Int32): PrivateScope, Public, HideBySig
+    insert(UserGroup): PrivateScope, Public, HideBySig
+    del(Int32): PrivateScope, Public, HideBySig
+    update(UserGroup): PrivateScope, Public, HideBySig
+Class CSGroup.GroupMemberDao: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.Data.Odbc.OdbcConnection): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getGroupMember(Int32, Int32): PrivateScope, Public, HideBySig
+    getGroupMembersByUId(Int32): PrivateScope, Public, HideBySig
+    getGroupMembersByGId(Int32): PrivateScope, Public, HideBySig
+    getUnpermittedGroupMembers(Int32): PrivateScope, Public, HideBySig
+    insert(GroupMember): PrivateScope, Public, HideBySig
+    del(Int32): PrivateScope, Public, HideBySig
+    del(Int32, Int32): PrivateScope, Public, HideBySig
+    update(GroupMember): PrivateScope, Public, HideBySig
+Class CSGroup.GroupFileShareDao: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.Data.Odbc.OdbcConnection): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getSharedFile(Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    getSharedFiles(Int32): PrivateScope, Public, HideBySig
+    insert(GroupFileShare): PrivateScope, Public, HideBySig
+    del(Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    delByGIdAndProviderId(Int32, Int32): PrivateScope, Public, HideBySig
+    delByGId(Int32): PrivateScope, Public, HideBySig
+    delByFId(Int32): PrivateScope, Public, HideBySig
+    delByGIdAndFId(Int32, Int32): PrivateScope, Public, HideBySig
+    update(GroupFileShare): PrivateScope, Public, HideBySig

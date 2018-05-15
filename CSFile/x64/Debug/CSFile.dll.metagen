@@ -1,0 +1,62 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly CSFile, Version=1.0.*, Culture=固定语言(固定国家/地区): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class CSFile.FileHeader: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, System.String, System.String, Int32, System.ValueType, Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getFId(): PrivateScope, Public, HideBySig
+    getName(): PrivateScope, Public, HideBySig
+    getPath(): PrivateScope, Public, HideBySig
+    getSize(): PrivateScope, Public, HideBySig
+    getSubmitTime(): PrivateScope, Public, HideBySig
+    getParent(): PrivateScope, Public, HideBySig
+    getUId(): PrivateScope, Public, HideBySig
+    setFId(Int32): PrivateScope, Public, HideBySig
+    setName(String): PrivateScope, Public, HideBySig
+    setPath(String): PrivateScope, Public, HideBySig
+    setSize(Int32): PrivateScope, Public, HideBySig
+    setSubmitTime(ValueType DateTime IsBoxed): PrivateScope, Public, HideBySig
+    setParent(Int32): PrivateScope, Public, HideBySig
+    setUId(Int32): PrivateScope, Public, HideBySig
+Class CSFile.Dir: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, System.String, System.ValueType, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getDId(): PrivateScope, Public, HideBySig
+    getName(): PrivateScope, Public, HideBySig
+    getCreateTime(): PrivateScope, Public, HideBySig
+    getParent(): PrivateScope, Public, HideBySig
+    getChildrenDirList(): PrivateScope, Public, HideBySig
+    getChildrenFileHeaderList(): PrivateScope, Public, HideBySig
+    setDId(Int32): PrivateScope, Public, HideBySig
+    setName(String): PrivateScope, Public, HideBySig
+    setCreateTime(ValueType DateTime IsBoxed): PrivateScope, Public, HideBySig
+    setParent(Int32): PrivateScope, Public, HideBySig
+    setChildrenDirList(List`1): PrivateScope, Public, HideBySig
+    setChildrenFileHeaderList(List`1): PrivateScope, Public, HideBySig
+Class CSFile.DirDao: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.Data.Odbc.OdbcConnection): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getDir(Int32): PrivateScope, Public, HideBySig
+    getLastId(): PrivateScope, Public, HideBySig
+    insert(Dir): PrivateScope, Public, HideBySig
+    del(Int32): PrivateScope, Public, HideBySig
+    update(Dir): PrivateScope, Public, HideBySig
+    getChildDirs(Int32): PrivateScope, Public, HideBySig
+Class CSFile.FileHeaderDao: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.Data.Odbc.OdbcConnection): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getFileHeader(Int32): PrivateScope, Public, HideBySig
+    insert(FileHeader): PrivateScope, Public, HideBySig
+    del(Int32): PrivateScope, Public, HideBySig
+    update(FileHeader): PrivateScope, Public, HideBySig
+    getChildFileHeaders(Int32): PrivateScope, Public, HideBySig

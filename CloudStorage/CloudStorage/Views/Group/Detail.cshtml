@@ -1,0 +1,291 @@
+﻿@using CloudStorage.Models
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_LayoutWithNavBar.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+            <form role="form" id="form1" method="post" action="/Home/List?dId=@ViewBag.rootDir">
+                <li>
+                    <a href="#" onclick="$('#form1').submit();">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                        首页
+                    </a>
+                </li>
+            </form>
+            <form role="form" id="form2" method="post" action="/Friend/List/@ViewBag.uId">
+                <li>
+                    <a href="#" onclick="$('#form2').submit();">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        好友
+                    </a>
+                </li>
+            </form>
+            <form role="form" id="form3" method="post" action="/Group/List?dId=@ViewBag.uId">
+                <li class="active">
+                    <a id="active-a" href="#" onclick="$('#form3').submit();">
+                        <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span>
+                        群组 <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            </form>
+            <form role="form" id="form4" method="post" action="/Home/Recyclebin?dId=@ViewBag.recyclebin">
+                <li>
+                    <a href="#" onclick="$('#form4').submit();">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                        回收站
+                    </a>
+                </li>
+            </form>
+        </ul>
+    </div>
+
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <div class="container">
+            <div class="return" id="group-return">
+                <form role="form" id="form5" method="post" action="/Group/List">
+                    <a href="#" onclick="$('#form5').submit();">
+                        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                        返回
+                    </a>
+                </form>
+            </div>
+            <div>@ViewBag.msg</div>
+            <div class="tab-bar">
+                <ul id="myTab" class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#first" data-toggle="tab">群组成员</a>
+                    </li>
+                    <li>
+                        <a href="#second" data-toggle="tab">群组分享的文件</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade in active" id="first">
+                    <table class="table">
+                        <caption>群组成员</caption>
+                        <thead>
+                            <tr>
+                                <th>成员ID</th>
+                                <th>姓名</th>
+                                @if (ViewBag.uId == ViewBag.owner.getUId())
+                                {
+                                    <th>操作</th>
+                                }
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>@ViewBag.owner.getUId()</td>
+                                <td>@ViewBag.owner.getName()（群主）</td>
+                            </tr>
+                            @foreach (User member in ViewBag.memberList)
+                            {
+                                <tr>
+                                    <td>@member.getUId()</td>
+                                    <td>@member.getName()</td>
+                                    @if (ViewBag.uId == ViewBag.owner.getUId())
+                                    {
+                                        <td>
+                                            <a class="delete_member_btn" member_id="@member.getUId()">踢出群组</a>
+                                        </td>
+                                    }
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="second">
+                    <table class="table">
+                        <caption>群组共享的文件</caption>
+                        <thead>
+                            <tr>
+                                <th>文件ID</th>
+                                <th>文件名</th>
+                                <th>大小</th>
+                                <th>分享者ID</th>
+                                <th>分享者姓名</th>
+                                <th>分享备注</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (GroupFileShareItem file in ViewBag.groupFileShareList)
+                            {
+                                <tr>
+                                    <td>@file.getFileHeader().getFId()</td>
+                                    <td>@file.getFileHeader().getName()</td>
+                                    <td>@file.getFileHeader().getSize() B</td>
+                                    <td>@file.getProvider().getUId()</td>
+                                    <td>@file.getProvider().getName()</td>
+                                    <td>@file.getGroupFileShare().getRemark()</td>
+                                    <td>
+                                        <a class="download_file_btn" f_id="@file.getFileHeader().getFId()">下载</a>
+                                        @if (file.getProvider().getUId() == ViewBag.uId || ViewBag.owner.getUId() == ViewBag.uId)
+                                        {
+                                            <a class="group_shared_file_delete_btn" f_id="@file.getFileHeader().getFId()">取消分享</a>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+            @if (ViewBag.unpermittedMemberList.Count > 0)
+            {
+                <table class="table">
+                    <caption>加群请求</caption>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>姓名</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (User member in ViewBag.unpermittedMemberList)
+                        {
+                            <tr>
+                                <td>@member.getUId()</td>
+                                <td>@member.getName()</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-default permit_member_btn" member_id="@member.getUId()">同意</button>
+                                        <button class="btn btn-default refuse_member_btn" member_id="@member.getUId()">拒绝</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+
+        </div>
+
+    </div>
+</div>
+
+
+<script src="~/scripts/jquery-3.2.1.min.js"></script>
+<script src="~/scripts/bootstrap.min.js"></script>
+<script src="~/scripts/fileinput.min.js"></script>
+<script src="~/scripts/zh.js"></script>
+<script src="~/scripts/semantic.min.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        $('.permit_member_btn').click(function () {
+            var member_id=$(this).attr('member_id');
+            var action='/Group/Permit' ;
+            var form = $('<form></form>');
+
+            form.attr('action', action);
+            form.attr('method', 'post');
+            form.attr('target', '_self');
+
+            var g_id_input = $('<input type="text" name="gId" />');
+            g_id_input.attr('value',@ViewBag.gId);
+            form.append(g_id_input);
+
+            var member_id_input = $('<input type="text" name="memberId" />');
+            member_id_input.attr('value',member_id);
+            form.append(member_id_input);
+
+            form.appendTo("body").submit();
+            form.remove();
+            return false;
+        })
+
+        $('.refuse_member_btn').click(function () {
+            var member_id=$(this).attr('member_id');
+            var action='/group/${uId}/${gId}/' + member_id + '/refuse' ;
+            var form = $('<form></form>');
+
+            form.attr('action', action);
+            form.attr('method', 'post');
+            form.attr('target', '_self');
+
+            var g_id_input = $('<input type="text" name="gId" />');
+            g_id_input.attr('value',@ViewBag.gId);
+            form.append(g_id_input);
+
+            var member_id_input = $('<input type="text" name="memberId" />');
+            member_id_input.attr('value',member_id);
+            form.append(member_id_input);
+
+            form.appendTo("body").submit();
+            form.remove();
+            return false;
+        })
+
+        $('.delete_member_btn').click(function () {
+            var member_id=$(this).attr('member_id');
+            var action='/Group/DeleteMember' ;
+            var form = $('<form></form>');
+
+            form.attr('action', action);
+            form.attr('method', 'post');
+            form.attr('target', '_self');
+
+            var g_id_input = $('<input type="text" name="gId" />');
+            g_id_input.attr('value',@ViewBag.gId);
+            form.append(g_id_input);
+
+            var member_id_input = $('<input type="text" name="memberId" />');
+            member_id_input.attr('value',member_id);
+            form.append(member_id_input);
+
+            form.appendTo("body").submit();
+            form.remove();
+            return false;
+        })
+
+        $('.group_shared_file_delete_btn').click(function(){
+            var f_id=$(this).attr('f_id');
+            var action='/File/CancelShareToGroup' ;
+            var form = $('<form></form>');
+
+            form.attr('action', action);
+            form.attr('method', 'post');
+            form.attr('target', '_self');
+
+            var f_id_input = $('<input type="text" name="fId" />');
+            f_id_input.attr('value',f_id);
+            form.append(f_id_input);
+
+            var g_id_input = $('<input type="text" name="gId" />');
+            g_id_input.attr('value',@ViewBag.gId);
+            form.append(g_id_input);
+
+            form.appendTo("body").submit();
+            form.remove();
+            return false;
+        })
+
+        //文件下载
+        $('.download_file_btn').click(function () {
+            var f_id=$(this).attr('f_id');
+            var action='/File/Download' ;
+            var form = $('<form></form>');
+
+            form.attr('action', action);
+            form.attr('method', 'post');
+            form.attr('target', '_self');
+
+            var f_id_input = $('<input type="text" name="fId" />');
+            f_id_input.attr('value',f_id);
+            form.append(f_id_input);
+
+            form.appendTo("body").submit();
+            form.remove();
+            return false;
+        })
+    })
+
+</script>
